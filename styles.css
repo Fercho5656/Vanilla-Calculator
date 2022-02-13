@@ -1,0 +1,85 @@
+:root {
+  --background: #131313;
+  --operators: #ff8800;
+  --result-text: #969696de;
+}
+
+body {
+  background-color: var(--background);
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: var(--background);
+  max-width: 300px;
+  height: auto;
+  user-select: none;
+  padding: 25px 35px;
+}
+
+.calculator {
+  border: 2px solid #dadada;
+  padding: 0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.display {
+  width: 100%;
+  word-wrap: break-word;
+  padding: 1ch 2ch 20px 0;
+  border-bottom: 1px rgba(128, 128, 128, 0.116) solid;
+}
+
+.currentInput {
+  text-align: right;
+  color: white;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.result {
+  text-align: right;
+  color: var(--result-text);
+  font-size: 1.25rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--background);
+  border-radius: 5px;
+}
+
+.btn {
+  color: #fff;
+  background-color: var(--background);
+  border: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #dadada;
+  color: var(--background);
+}
+
+.btn[data-value="equals"] {
+  border-radius: 0 0 5px 0;
+}
+.btn[data-value="0"] {
+  border-radius: 0 0 0 5px;
+  grid-column: span 2;
+}
+
+.btn-operator,
+.btn-clear,
+.btn-delete,
+.btn-equals {
+  color: var(--operators);
+}
